@@ -33,6 +33,9 @@ release-base release-test:	CXXFLAGS+=-O2 -flto
 debug-base debug-test:		LDFLAGS+=-L../debug
 release-base release-test:	LDFLAGS+=-L../release
 
+debug-test:			LDFLAGS+=-Ltarget/debug
+release-test:			LDFLAGS+=-Ltarget/release
+
 debug-test release-test:        INCLIBS+=-ltest
 
 release-base release-test:	AR=gcc-ar
